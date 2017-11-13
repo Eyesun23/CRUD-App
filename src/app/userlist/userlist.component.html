@@ -1,0 +1,17 @@
+<mat-expansion-panel *ngFor="let user of users">
+  <mat-expansion-panel-header>
+    <mat-panel-title>
+      <mat-icon>person</mat-icon>
+      {{user.name}}
+    </mat-panel-title>
+  </mat-expansion-panel-header>
+
+  <mat-list>
+  <img [src]="user.imageurl" alt="user.name" class="avatar">
+    <mat-list-item>{{user.email}}</mat-list-item>
+    <mat-list-item>{{user.male}}</mat-list-item>
+  </mat-list>
+  <button mat-raised-button color="primary" [routerLink]="['/edit', user.key]">Edit</button>
+  <button mat-raised-button color="warn" (click)="removeUser(user.key)">Delete</button>
+</mat-expansion-panel>
+<h3 *ngIf="!users">No users yet</h3>

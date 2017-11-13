@@ -1,0 +1,21 @@
+<div class="form-container">
+  <form [formGroup]="userForm" (submit)="editUser()">
+    <mat-form-field>
+      <input matInput placeholder="Name" formControlName="name">
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+      <input matInput placeholder="Email" formControlName="email">
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+      <mat-select placeholder="Select" formControlName="male">
+        <mat-option value="male">Male</mat-option>
+        <mat-option value="female">Female</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <br>
+    <button mat-raised-button (click)="rewriteUser()">Edit</button>
+    <button mat-raised-button color="primary" (click)="goBack()">Cancel</button>
+  </form>
+</div>

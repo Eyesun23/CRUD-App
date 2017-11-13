@@ -1,0 +1,22 @@
+<div class="form-container">
+  <form [formGroup]="userForm" (submit)="createUser()">
+    <mat-form-field>
+      <input id="name" name="name" matInput placeholder="Name" formControlName="name" required>
+    </mat-form-field>
+  <br>
+    <mat-form-field>
+        <input matInput placeholder="Email" formControlName="email" type="email" name="email" email required>
+    </mat-form-field>
+  <br>
+    <mat-form-field>
+      <mat-select placeholder="Select" formControlName="male">
+        <mat-option value="male">Male</mat-option>
+        <mat-option value="female">Female</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <br>
+    <input type="file" (change)="onFileChange($event)">
+    <br><br>
+    <button mat-raised-button type="submit" [disabled]="!userForm.valid">Submit!</button>
+  </form>
+  </div>
